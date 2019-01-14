@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <style>
+        .argon-logo {
+            height: 35px;
+            width: 35px;
+            margin-top: 10px;
+        }
+        ::placeholder{
+            color: #2962ff;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper blue darken-4">
+                <div class="container">
+                    <a href="" class="brand-logo"><b>
+                            ARGON</b></a>
+                    <ul class="right">
+                        <li><a href=""><b>Book appointment</b></a></li>
+                        <li><a href=""><b>Chat with a doctor</b></a></li>
+                        <li><a href=""><b>Medical library</b></a></li>
+                        <li><a href="" class="btn hoverable white blue-text text-darken-4">LOGIN/SIGNUP</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="section container">
+        <h3 class="blue-text text-accent-4"><b>Book Your Appointment</b></h3>
+        <div class="row">
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="first-name">
+                    <label for="first-name">First Name</label>
+                </div>
+            </div>
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="last-name">
+                    <label for="last-name">Last Name</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="phone" placeholder="+91">
+                    <label for="phone">Phone Number</label>
+                </div>
+            </div>
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="aadhar" disabled value="XXXX XXXX 1234">
+                    <label for="aadhar">Enter Aadhar Number</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m6">
+                <input type="text" class="datepicker" id="date-pick" placeholder="Pick a date" >
+                
+            </div>  
+            <div class="col m6">
+                <input type="text" class="timepicker" placeholder="Choose time">
+            </div>     
+        </div>
+        <a href="/send"> <button class="btn-large blue darken-4">BOOK NOW</button></a>
+    </section>    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>
+     $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Today',
+    clear: 'Clear',
+    close: 'Ok',
+    closeOnSelect: false, // Close upon selecting a date,
+    container: undefined, // ex. 'body' will append picker to body
+  });
+  $('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button,
+    container: undefined, // ex. 'body' will append picker to body
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+<style>
+    .argon-logo {
+            height: 35px;
+            width: 35px;
+            margin-top: 10px;
+        }
+        .heading{
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+        ::placeholder{
+            color: #2962ff;
+            opacity: 1;
+        }
+        .find-doctor{
+           margin-top: 50px; 
+        }
+</style>
+</head>
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper blue darken-4">
+                <div class="container">
+                    <a href="" class="brand-logo"><b>
+                            ARGON</b></a>
+                    <ul class="right">
+                        <li><a href=""><b>Book appointment</b></a></li>
+                        <li><a href=""><b>Chat with a doctor</b></a></li>
+                        <li><a href=""><b>Medical library</b></a></li>
+                        <li><a href="" class="btn hoverable white blue-text text-darken-4">LOGIN/SIGNUP</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+                <div class="row find-doctor">
+                        <div class="col m4">
+                            <div class="input-field">
+                                <input type="text" id="add-city" value="" placeholder="Enter Your Region" class="autocomplete">
+                            </div>
+                        </div>
+                        <div class="col m1">
+                            <span id="get-location" class="btn-large btn-floating blue darken-4"><i class="fas fa-map-marker-alt fa-2x"></i></span>
+                        </div>
+                        <div class="col m4">
+                            <div class="input-field">
+                                <input type="text" id="categories" class="autocomplete">
+                                <label for="categories" class="blue-text text-accent-4"><b>Search Doctors</b></label>
+                            </div>
+                        </div>
+                        <div class="col m1">
+                            <span class="btn-large btn-floating blue darken-4"><i class="fas fa-search"></i></span>
+                        </div>
+                    </div>
+        </div>
+    </header>
+    <section class="section container">
+        <div class="row">
+            <div class="col m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="img/user.svg" height="50px" width="50px">
+                            <h5>Dr. Gourav Sardana</h5>
+                            <p class=""><b>DENTIST</b></p>
+                        </div>
+                        <div class="card-action">
+                            <p><b>RATINGS: 4.5/5 	&#9733;</b></p>
+                            <a href="/booknow" class="blue-text text-accent-4">BOOK NOW</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="col m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="img/user.svg" height="50px" width="50px">
+                            <h5>Dr. Sanjay Gupta</h5>
+                            <p class=""><b>DENTIST</b></p>
+                        </div>
+                        <div class="card-action">
+                            <p><b>RATINGS: 4/5 	&#9733;</b></p>
+                            <a href="/booknow" class="blue-text text-accent-4">BOOK NOW</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $('select').material_select();
+            $('input.autocomplete').autocomplete({
+                data: {
+                "Dentist": null,
+                "Dermatologist": null,
+                "ENT": null,
+                "Orthologist": null
+                },
+                limit: 2, // The max amount of results that can be shown at once. Default: Infinity.
+                onAutocomplete: function(val) {
+                // Callback function when value is autcompleted.
+                    
+                },
+                minLength: 0, // The minimum length of the input for the autocomplete to start. Default: 1.
+            });
+            $("#add-city.autocomplete").autocomplete({
+                data: {
+                "Delhi": null,
+                "Hyderabad": null,
+                "Bombay": null,
+                "Bangalore": null
+                },
+                limit: 2, // The max amount of results that can be shown at once. Default: Infinity.
+                onAutocomplete: function(val) {
+                // Callback function when value is autcompleted.
+                    
+                },
+                minLength: 0, // The minimum length of the input for the autocomplete to start. Default: 1.
+            });
+            document.getElementById("get-location").addEventListener("click", function(){
+                        $.ajax({
+                    url: "https://geoip-db.com/jsonp",
+                    jsonpCallback: "callback",
+                    dataType: "jsonp",
+                    success: function( location ) {
+                        console.log(location.country_name);
+                        var region = location.city
+                        document.getElementById("add-city").value = region;  
+                    }
+            });
+            
+        });     
+        });
+
+
+</script>
+</body>
+</html>

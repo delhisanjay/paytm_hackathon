@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Activity</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+<style>
+    .heading{
+        margin-bottom: 50px;
+    }
+    .side-nav-link b{
+        font-size: 16px;
+    }
+    .side-nav-item:hover{
+        background-color: #2962ff;
+    }
+    .activate{
+        background-color: #0d47a1
+    }
+    .user-img{
+        height: 100px;
+        width: 100px;
+    }
+    .btn{
+        border: 1px solid #0d47a1;
+    }
+</style>
+</head>
+
+<body>
+    <div class="">
+        <nav class="nav-wrapper blue darken-4">
+            <div class="container">
+                <ul id="slide-out" class="right fixed side-nav grey darken-4">
+                    <li class="heading"><a href="" class="white-text"><h4><b><i class="fas fa-flask fa-2x"></i> AaRGON</b></h4></a></li>
+                    <li class="side-nav-item"><a href="/profile" class="white-text side-nav-link"><b>Profile</b></a></li>
+                    <li class="side-nav-item activate"><a href="/activity" class="white-text side-nav-link"><b>Activity</b></a></li>
+                    <li class="side-nav-item"><a href="/doctors" class="white-text side-nav-link"><b>Find a doctor</b></a></li>
+                    <li class="side-nav-item"><a href="/feedback" class="white-text side-nav-link"><b>Feedback</b></a></li>
+                </ul>
+                <a href="" data-activates="slide-out" class="left button-collapse"><i class="fas fa-bars fa-3x"></i></a>
+                <ul class="right">
+                    <li><a href="{% url 'logout' %}" class="btn white blue-text text-darken-4 hoverable ">{{request.user.first_name}}</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col m12 s12 offset-m3">
+                <ul class="tabs">
+                    <li class="tab col m5 s6"><a href="#feed" class="blue-text text-accent-4"><b>FEED</b> </a></li>
+                    <li class="tab col m5 s6"><a href="#reports" class="blue-text text-accent-4"><b>REPORTS</b></a></li>
+                </ul>
+                <div id="feed">
+                    <div class="container col m6 s6">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <h4 class="blue-text text-accent-4">Monthly Checkup Checkup</h4>
+                                <p><b>1 hour ago</b></p>
+                            </div>
+                        </div>
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <h3 class="blue-text text-accent-4">Dermatologist Checkup</h3>
+                                <p><b>Last month</b></p>
+                            </div>
+                        </div>
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <h3 class="blue-text text-accent-4">Diabetic Check</h3>
+                                <p><b>1 week ago</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m4 s6 upcoming">
+                        <div class="card">
+                            <div class="card-content">
+                                <p><b>Upcoming appointment of Dental Check.</b></p>
+                                <p>On 17/01/2019, 11:00 AM</p>
+                                <div class="card-action">
+                                    <p>SET REMINDER</p>
+                                    <div class="switch">
+                                        <label>
+                                            Off
+                                            <input type="checkbox">
+                                            <a onclick="Materialize.toast({html: 'Notification Set'})" class="lever"></a>
+                                            On
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <a href="" class="blue-text blue-accent-4">CHANGE DETAILS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                <div id="reports">
+                    <div class="container col m10">
+                        <ul class="collection with-header">
+                            <li class="collection-header active blue darken-4 white-text"><h5>History of prescriptions</h5></li>
+                            <li  class="collection-item">Report<a href="/media/report/file.pdf" class="right blue-text"><i class="fas fa-arrow-down fa-2x"></i></a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>
+    $(".button-collapse").sideNav();
+</script>    
+</body>
+
+</html>

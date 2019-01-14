@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{%block body%}
+
+
+<section class="section" id="section_login">
+    <div class="row container">
+        <div class="col m6">
+
+        </div>
+        <div class="col m6 s12">
+            <div class="card">
+                <div class="card-content">
+                    <form action="{% url 'patient_login' %}", method="post">
+                        {% csrf_token %}
+                        <h3 id="login_h3">Log In</h3>
+                        <div class="row">
+                        <div class="group">
+                            <label for="email"><b class="blue-text text-darken-4">Email</b></label>
+                            <input required type="text" name="username" placeholder="Username">
+                            <!--<input type="email", name="email" placeholder="Enter Your Email" />-->
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <label for="password"><b class="blue-text text-darken-4">Password</b></label>
+                                <input required type="password" name="password" placeholder="Enter Your Password" >
+                            </div>
+                        </div>
+                        <input type="submit" class="btn  blue darken-4" value="Login">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{%endblock%}

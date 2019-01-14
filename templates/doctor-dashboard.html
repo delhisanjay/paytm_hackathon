@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doctor Dashboard</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+<style>
+    .heading{
+        margin-bottom: 50px;
+    }
+    .side-nav-link b{
+        font-size: 16px;
+    }
+    .side-nav-item:hover{
+        background-color: #2962ff;
+    }
+    .activate{
+        background-color: #0d47a1
+    }
+    .user-img{
+        height: 100px;
+        width: 100px;
+    }
+    .btn{
+        border: 1px solid #0d47a1;
+    }
+    .doc-name{
+        color: 
+    }
+</style>
+</head>
+<body>
+    <div class="">
+        <nav class="nav-wrapper blue darken-4">
+            <div class="container">
+                    <ul id="slide-out" class="right fixed side-nav grey darken-4">
+                            <li class="heading"><a href="" class="white-text"><h4><i class="fas fa-flask fa-2x"></i><b> ARGON</b></h4></a></li>
+                            <li class="side-nav-item activate"><a href="" class="white-text side-nav-link"><b>Appointments</b></a></li>
+                            <li class="side-nav-item"><a href="" class="white-text side-nav-link"><b>Status</b></a></li>
+                            <li class="side-nav-item"><a href="" class="white-text side-nav-link"><b>Profile</b></a></li>
+                        </ul>
+                    <a href="" data-activates="slide-out" class="left button-collapse"><i class="fas fa-bars fa-3x"></i></a>
+                <ul class="right">
+                    <li><a href="" class="btn white blue-text text-darken-4 hoverable ">LOGOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col m2">
+
+        </div>
+        <div class="col m10">
+            <div class="container">
+                <ul>
+                    <li><h5>Hello <b class="blue-text text-accent-4">{{request.user}}</b> your appointments for today are.</h5></li>
+                </ul>
+                <table class="responsive-table striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Brief Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gourav</td>
+                            <td>11:00 AM</td>
+                            <td>Tooth Ache</td>
+                            <td><a href="">DETAILS</a></td>
+                        </tr>
+                        <tr>
+                            <td>Sakshat</td>
+                            <td>5:00 PM</td>
+                            <td>Gum Bleeding</td>
+                            <td><a href="">DETAILS</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
